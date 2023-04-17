@@ -1,0 +1,20 @@
+@st-namespace "button";
+
+.root {
+    -st-states:
+        variant(enum(secondary, primary)),
+        loading;
+
+    all: unset;
+    align-items: center;
+    user-select: none;
+
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+    line-height: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    background-color: silver;
+    padding: 5px;
+}

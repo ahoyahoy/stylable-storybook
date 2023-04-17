@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/nextjs';
-import { StylableWebpackPlugin } from '@stylable/webpack-plugin';
+import {
+  applyWebpackConfigStylableExcludes,
+  StylableWebpackPlugin,
+} from '@stylable/webpack-plugin';
 
 const config: StorybookConfig = {
   stories: [
@@ -20,6 +23,8 @@ const config: StorybookConfig = {
   },
   features: { storyStoreV7: false },
   webpackFinal: async (config, { configType }) => {
+    applyWebpackConfigStylableExcludes(config);
+
     config.plugins = [
       ...(config.plugins || []),
       new StylableWebpackPlugin(),
